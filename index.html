@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Adeel | DevOps & Cloud Engineer</title>
-  <meta name="description" content="Portfolio of Muhammad Adeel - DevOps Enthusiast, Linux Administrator, and Cloud Infrastructure Specialist." />
+  <title>Muhammad Adeel — DevOps & Systems Engineer</title>
+  <meta name="description" content="Personal portfolio of Muhammad Adeel. Software engineering student with a focus on Linux administration, Docker, and DevOps automation." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons CDN -->
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -21,19 +21,15 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['Fira Code', 'JetBrains Mono', 'monospace'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            brand: {
-              green: '#00F701',
-              darkGreen: '#00b801',
-              cyan: '#38bdf8',
-              navy: '#0F2027',
-              deepBg: '#090d16',
-              surface: '#0f172a',
-              card: '#131d31',
-              border: '#1e293b',
+            surface: {
+              DEFAULT: '#0a0a0c',
+              elevated: '#111116',
+              border: '#1f1f27',
+              muted: '#71717a',
             }
           }
         }
@@ -42,590 +38,321 @@
   </script>
 
   <style>
-    /* Neon glow effect matching profile README #00F701 */
-    .neon-text {
-      text-shadow: 0 0 10px rgba(0, 247, 1, 0.5), 0 0 20px rgba(0, 247, 1, 0.2);
+    body {
+      background-color: #09090b;
+      color: #e4e4e7;
     }
-    .neon-box {
-      box-shadow: 0 0 25px -5px rgba(0, 247, 1, 0.25);
-    }
-    .bg-grid {
-      background-size: 36px 36px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    }
-    .card-transition {
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-transition:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0, 247, 1, 0.4);
-      box-shadow: 0 12px 30px -10px rgba(0, 247, 1, 0.2);
+    ::selection {
+      background-color: #27272a;
+      color: #38bdf8;
     }
   </style>
 </head>
+<body class="font-sans antialiased min-h-screen selection:bg-neutral-800 selection:text-white">
 
-<body class="bg-[#080d1a] text-slate-200 font-sans antialiased selection:bg-[#00F701] selection:text-black min-h-screen relative overflow-x-hidden">
+  <!-- Main Container (Centered, Clean Minimalist Layout) -->
+  <div class="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-20">
 
-  <!-- Ambient Background Glows -->
-  <div class="fixed inset-0 bg-grid pointer-events-none -z-10 opacity-60"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-[#00F701]/10 via-[#38bdf8]/5 to-transparent blur-[120px] pointer-events-none -z-10"></div>
-
-  <!-- Top Navigation Bar -->
-  <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#080d1a]/85 border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand Logo / Prompt -->
-      <a href="#" class="flex items-center space-x-2 font-mono font-bold text-base sm:text-lg text-[#00F701] hover:opacity-90 transition-opacity">
-        <i data-lucide="terminal" class="w-5 h-5 text-[#00F701]"></i>
-        <span>adeel@devops:~$<span class="animate-pulse">_</span></span>
-      </a>
-
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300 font-mono">
-        <a href="#about" class="hover:text-[#00F701] transition-colors">~/about</a>
-        <a href="#skills" class="hover:text-[#00F701] transition-colors">~/tech-stack</a>
-        <a href="#projects" class="hover:text-[#00F701] transition-colors">~/projects</a>
-        <a href="#education" class="hover:text-[#00F701] transition-colors">~/education</a>
-        <a href="#contact" class="hover:text-[#00F701] transition-colors">~/contact</a>
-      </nav>
-
-      <!-- Action Buttons -->
+    <!-- Top Navigation / Quick Status -->
+    <header class="flex items-center justify-between pb-8 border-b border-neutral-800/80">
       <div class="flex items-center space-x-3">
-        <a href="https://github.com/muhammad-adeel9290" target="_blank" class="p-2 text-slate-300 hover:text-[#00F701] hover:bg-slate-800/50 rounded-lg transition-colors" title="GitHub Profile">
-          <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
-        <a href="mailto:muhammadadeel9290@gmail.com" class="hidden sm:inline-flex items-center space-x-2 text-xs font-mono font-semibold px-4 py-2 rounded-lg bg-[#00F701]/10 border border-[#00F701]/30 text-[#00F701] hover:bg-[#00F701] hover:text-black transition-all">
-          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-          <span>Say Hello</span>
-        </a>
-        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+        <span class="text-xs font-mono text-neutral-400">Sahiwal, PK · Open for opportunities</span>
       </div>
-    </div>
+      <div class="flex items-center space-x-5 text-sm font-medium text-neutral-400">
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        <a href="https://github.com/muhammad-adeel9290" target="_blank" class="hover:text-white transition-colors flex items-center space-x-1">
+          <span>GitHub</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </header>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 space-y-2 bg-[#0d1424] border-b border-slate-800 font-mono text-sm">
-      <a href="#about" class="block py-2 text-slate-300 hover:text-[#00F701]">~/about</a>
-      <a href="#skills" class="block py-2 text-slate-300 hover:text-[#00F701]">~/tech-stack</a>
-      <a href="#projects" class="block py-2 text-slate-300 hover:text-[#00F701]">~/projects</a>
-      <a href="#education" class="block py-2 text-slate-300 hover:text-[#00F701]">~/education</a>
-      <a href="#contact" class="block py-2 text-slate-300 hover:text-[#00F701]">~/contact</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="about" class="pt-16 pb-20 md:pt-24 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Left Column: Bio & Intro -->
-      <div class="lg:col-span-7 space-y-6">
-        
-        <!-- Live Status Pill -->
-        <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-[#00F701]/10 border border-[#00F701]/30 text-[#00F701] text-xs font-mono">
-          <span class="w-2 h-2 rounded-full bg-[#00F701] animate-ping"></span>
-          <span class="w-2 h-2 rounded-full bg-[#00F701] -ml-3.5"></span>
-          <span>Available for DevOps &amp; Cloud Internships / Roles</span>
-        </div>
-
-        <div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-            Hi, I'm <br class="hidden sm:inline"/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00F701] via-emerald-400 to-sky-400">Muhammad Adeel</span>
-          </h1>
-          <p class="text-xl sm:text-2xl font-mono text-slate-300 mt-2 font-medium">
-            DevOps Enthusiast • Linux • Docker • Automation
-          </p>
-        </div>
-
-        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
-          Software Engineering student at <strong class="text-slate-200">COMSATS University Islamabad (Sahiwal Campus)</strong>. Passionate about Linux administration, containerization with Docker, Infrastructure as Code, CI/CD automation, and cloud engineering.
+    <!-- Hero / Introduction -->
+    <section class="space-y-6">
+      <div class="space-y-2">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Muhammad Adeel
+        </h1>
+        <p class="text-lg text-neutral-300 font-medium">
+          Software Engineering Student &amp; DevOps Enthusiast
         </p>
-
-        <!-- Fun Fact Quote -->
-        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-sm font-mono flex items-center space-x-3">
-          <span class="text-lg">💡</span>
-          <span><em class="text-[#00F701]">"If I do something twice, I write a script for it 😄"</em></span>
-        </div>
-
-        <!-- Call to Actions -->
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#projects" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-[#00F701] text-black font-semibold hover:bg-[#00d601] transition-all shadow-lg shadow-[#00F701]/20">
-            <i data-lucide="layers" class="w-4 h-4"></i>
-            <span>Explore My Projects</span>
-          </a>
-          <a href="https://github.com/muhammad-adeel9290" target="_blank" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-[#0f172a] border border-slate-700 text-slate-200 font-medium hover:border-[#00F701]/50 hover:text-white transition-all">
-            <i data-lucide="github" class="w-4 h-4 text-[#00F701]"></i>
-            <span>GitHub Profile</span>
-          </a>
-        </div>
-
-        <!-- Quick Summary Stats -->
-        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
-          <div>
-            <div class="text-2xl font-bold font-mono text-[#00F701]">100%</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Linux &amp; Bash Passion</div>
-          </div>
-          <div>
-            <div class="text-2xl font-bold font-mono text-[#00F701]">Docker</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Multi-stage Containerization</div>
-          </div>
-          <div>
-            <div class="text-2xl font-bold font-mono text-[#00F701]">Full-Stack</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Angular &amp; Node.js Foundation</div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Right Column: Interactive Linux Terminal -->
-      <div class="lg:col-span-5">
-        <div class="rounded-2xl border border-slate-800 bg-[#0c1220] shadow-2xl overflow-hidden neon-box font-mono text-xs sm:text-sm">
-          <!-- Terminal Header -->
-          <div class="bg-[#11192b] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="w-3 h-3 rounded-full bg-rose-500"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-              <span class="w-3 h-3 rounded-full bg-[#00F701]"></span>
-            </div>
-            <div class="text-slate-400 text-xs flex items-center space-x-1.5">
-              <i data-lucide="terminal" class="w-3.5 h-3.5 text-[#00F701]"></i>
-              <span>adeel@comsats-bastion: ~</span>
-            </div>
-          </div>
+      <div class="text-neutral-400 leading-relaxed space-y-4 text-base">
+        <p>
+          I'm an undergraduate student at <strong class="text-neutral-200 font-semibold">COMSATS University Islamabad (Sahiwal Campus)</strong>. My main focus is on Linux systems administration, containerization, writing automation scripts, and exploring modern cloud infrastructure.
+        </p>
+        <p>
+          I prefer simple, reliable setups over unnecessary complexity. Most of my work involves building robust Bash automation, configuring Docker environments, experimenting with Kubernetes and Prometheus, and building full-stack web services.
+        </p>
+      </div>
 
-          <!-- Terminal Commands & Real Output -->
-          <div class="p-5 space-y-4 text-slate-300 leading-relaxed">
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="mailto:muhammadadeel9290@gmail.com" class="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-neutral-100 text-neutral-900 text-sm font-medium hover:bg-white transition-colors">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Send an Email</span>
+        </a>
+        <a href="https://github.com/muhammad-adeel9290" target="_blank" class="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 text-sm font-medium hover:bg-neutral-800/80 hover:text-white transition-colors">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>@muhammad-adeel9290</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Selected Projects (Real, Honest, Technical Case Studies) -->
+    <section id="projects" class="space-y-8">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xs uppercase font-mono tracking-wider text-neutral-400 font-semibold">
+          Selected Projects
+        </h2>
+        <a href="https://github.com/muhammad-adeel9290?tab=repositories" target="_blank" class="text-xs font-mono text-neutral-400 hover:text-white transition-colors flex items-center space-x-1">
+          <span>All repositories</span>
+          <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- Project 1: devops-projectfirst -->
+        <article class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors space-y-4">
+          <div class="flex items-start justify-between">
             <div>
-              <span class="text-[#00F701]">adeel@bastion:~$</span>
-              <span class="text-white"> ./server_health_check.sh</span>
-              <div class="text-xs mt-1.5 space-y-0.5 font-mono">
-                <div class="text-emerald-400">[INFO] Checking system CPU usage... 14% (OK)</div>
-                <div class="text-emerald-400">[INFO] Checking Memory usage... 2.4GB / 16GB (OK)</div>
-                <div class="text-emerald-400">[INFO] Checking Disk space /dev/sda1... 42% (OK)</div>
-                <div class="text-sky-300">[INFO] Metrics exported to Prometheus :9100</div>
-              </div>
+              <h3 class="text-lg font-semibold text-white">
+                <a href="https://github.com/muhammad-adeel9290/devops-projectfirst" target="_blank" class="hover:underline flex items-center space-x-1.5">
+                  <span>DevOps Server Health &amp; Observability Platform</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-neutral-500"></i>
+                </a>
+              </h3>
+              <p class="text-xs text-neutral-400 font-mono mt-0.5">End-to-End DevOps Infrastructure Pipeline</p>
             </div>
+            <a href="https://github.com/muhammad-adeel9290/devops-projectfirst" target="_blank" class="text-neutral-400 hover:text-white transition-colors p-1" title="View Source">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
 
+          <p class="text-sm text-neutral-300 leading-relaxed">
+            A comprehensive project where I implemented a complete infrastructure workflow. It includes an unprivileged multi-stage Alpine Docker container, a full local observability environment via Docker Compose (scraping custom Node.js metrics with Prometheus and visualizing them in Grafana), Helm charts with NetworkPolicies, and automated GitHub Actions CI with Trivy and Gitleaks security scans.
+          </p>
+
+          <div class="space-y-1.5 text-xs text-neutral-400">
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+              <span><strong>Observability:</strong> Pre-configured Prometheus scrapers, Grafana dashboards, and Alertmanager.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+              <span><strong>CI/CD &amp; Security:</strong> Trivy image scanner + ShellCheck scripts validation in GitHub Actions.</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Docker</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Prometheus</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Grafana</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Kubernetes / Helm</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">GitHub Actions</span>
+          </div>
+        </article>
+
+        <!-- Project 2: Server Health Monitor -->
+        <article class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors space-y-4">
+          <div class="flex items-start justify-between">
             <div>
-              <span class="text-[#00F701]">adeel@bastion:~$</span>
-              <span class="text-white"> docker ps --format "table {{.Names}}\t{{.Status}}"</span>
-              <div class="text-xs text-slate-400 space-y-0.5 mt-1.5 font-mono">
-                <div class="text-slate-500">NAMES &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS</div>
-                <div>prometheus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Up 4 days (healthy)</div>
-                <div>grafana-dash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Up 4 days (healthy)</div>
-                <div>devops-api &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Up 4 days (healthy)</div>
-              </div>
+              <h3 class="text-lg font-semibold text-white">
+                <a href="https://github.com/muhammad-adeel9290/server-health-monitor" target="_blank" class="hover:underline flex items-center space-x-1.5">
+                  <span>Server Health Monitor</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-neutral-500"></i>
+                </a>
+              </h3>
+              <p class="text-xs text-neutral-400 font-mono mt-0.5">Linux Server Administration &amp; Automation</p>
             </div>
+            <a href="https://github.com/muhammad-adeel9290/server-health-monitor" target="_blank" class="text-neutral-400 hover:text-white transition-colors p-1" title="View Source">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
 
+          <p class="text-sm text-neutral-300 leading-relaxed">
+            A modular Bash utility written to monitor Linux server resources without heavy dependencies. It checks CPU load, RAM allocation, and disk capacity, parsing system values directly from <code class="font-mono text-xs text-neutral-300 bg-neutral-800 px-1 py-0.5 rounded">/proc</code>. Includes automated cron daemon scheduling and alerting triggers when safe thresholds are crossed.
+          </p>
+
+          <div class="space-y-1.5 text-xs text-neutral-400">
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+              <span><strong>Pure Bash:</strong> Zero external third-party dependencies, parses procfs directly.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+              <span><strong>Automation:</strong> Self-installing cron setup script with log rotation.</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Bash</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Linux / Ubuntu</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Systemd / Cron</span>
+          </div>
+        </article>
+
+        <!-- Project 3: SocialSphere -->
+        <article class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors space-y-4">
+          <div class="flex items-start justify-between">
             <div>
-              <span class="text-[#00F701]">adeel@bastion:~$</span>
-              <span class="text-amber-300"> cat whoami.json</span>
-              <div class="text-xs text-slate-400 mt-1 font-mono">
-                { "name": "Muhammad Adeel", "location": "Sahiwal, PK", "focus": "DevOps & Cloud" }
-              </div>
+              <h3 class="text-lg font-semibold text-white">
+                <a href="https://github.com/muhammad-adeel9290/SocialSphere" target="_blank" class="hover:underline flex items-center space-x-1.5">
+                  <span>SocialSphere</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-neutral-500"></i>
+                </a>
+              </h3>
+              <p class="text-xs text-neutral-400 font-mono mt-0.5">Full-Stack Web Application</p>
             </div>
-
-            <div class="pt-2 flex items-center space-x-2 text-[#00F701]">
-              <span>adeel@bastion:~$</span>
-              <span class="w-2.5 h-4 bg-[#00F701] animate-pulse"></span>
-            </div>
+            <a href="https://github.com/muhammad-adeel9290/SocialSphere" target="_blank" class="text-neutral-400 hover:text-white transition-colors p-1" title="View Source">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
           </div>
-        </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- Tech Arsenal / Skills Section -->
-  <section id="skills" class="py-20 bg-[#070b14] border-y border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs uppercase font-mono tracking-widest text-[#00F701] font-semibold">Tech Arsenal</h2>
-        <p class="text-3xl font-extrabold text-white mt-2">Skills &amp; Technologies</p>
-        <p class="text-slate-400 text-sm mt-2">Tools, operating systems, container environments, and development technologies.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- Category 1: OS & Scripting -->
-        <div class="bg-[#0f172a]/90 border border-slate-800 rounded-2xl p-6 card-transition">
-          <div class="w-12 h-12 rounded-xl bg-[#00F701]/10 border border-[#00F701]/30 flex items-center justify-center text-[#00F701] mb-4">
-            <i data-lucide="terminal-square" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">OS &amp; Shell Scripting</h3>
-          <p class="text-slate-400 text-xs mb-4">Command line mastery, automation scripts, server administration &amp; security.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Linux (Ubuntu)</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Kali Linux</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Bash / Shell</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Cron Jobs</span>
-          </div>
-        </div>
-
-        <!-- Category 2: Containers & Orchestration -->
-        <div class="bg-[#0f172a]/90 border border-slate-800 rounded-2xl p-6 card-transition">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-4">
-            <i data-lucide="container" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Containers &amp; Cloud</h3>
-          <p class="text-slate-400 text-xs mb-4">Containerizing workloads, managing multi-container stacks, and cloud orchestration.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Docker</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Dockerfile</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Docker Compose</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Kubernetes (K8s)</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">AWS Basics</span>
-          </div>
-        </div>
-
-        <!-- Category 3: CI/CD & Observability -->
-        <div class="bg-[#0f172a]/90 border border-slate-800 rounded-2xl p-6 card-transition">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
-            <i data-lucide="git-merge" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">CI/CD &amp; Monitoring</h3>
-          <p class="text-slate-400 text-xs mb-4">Version control, pipeline automation, Prometheus metric scraping, and Grafana.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Git &amp; GitHub</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">GitHub Actions</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Prometheus</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Grafana</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Alertmanager</span>
-          </div>
-        </div>
-
-        <!-- Category 4: Full-Stack Development -->
-        <div class="bg-[#0f172a]/90 border border-slate-800 rounded-2xl p-6 card-transition">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
-            <i data-lucide="code" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Full-Stack Background</h3>
-          <p class="text-slate-400 text-xs mb-4">Strong coding foundations in modern web frameworks, APIs, and databases.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">TypeScript / JS</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Angular</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">Node.js / Express</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">MongoDB</span>
-            <span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-700/80 rounded-lg text-slate-200">REST APIs</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Section -->
-  <section id="projects" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-      <div>
-        <h2 class="text-xs uppercase font-mono tracking-widest text-[#00F701] font-semibold">Real-World Code</h2>
-        <p class="text-3xl font-extrabold text-white mt-2">Featured Projects</p>
-        <p class="text-slate-400 text-sm mt-2">DevOps pipelines, observability platforms, server monitors, and web systems.</p>
-      </div>
-      <a href="https://github.com/muhammad-adeel9290?tab=repositories" target="_blank" class="mt-4 md:mt-0 inline-flex items-center space-x-2 text-sm font-mono text-[#00F701] hover:underline">
-        <span>View all on GitHub</span>
-        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-      </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- Project 1: devops-projectfirst -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 sm:p-8 card-transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
-            <span class="text-[#00F701] font-semibold">FEATURED DEVOPS PLATFORM</span>
-            <span>Docker • K8s • Terraform</span>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Enterprise DevOps Server Health &amp; Observability Platform</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Production-grade engineering platform featuring real-time health monitoring, Prometheus metrics exporter, security-hardened Alpine multi-stage Dockerization, Kubernetes Helm deployments with GitOps (ArgoCD), and automated DevSecOps CI/CD with Trivy &amp; Gitleaks scans.
+          <p class="text-sm text-neutral-300 leading-relaxed">
+            Full-stack social platform built with Angular on the frontend and an Express / Node.js REST API on the backend. Implemented real-time bidirectional messaging with Socket.io, JWT-based user authentication, and MongoDB persistence.
           </p>
-          <div class="space-y-2 mb-6 text-xs text-slate-300 font-mono">
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Full Docker Compose stack (App, Prometheus, Grafana, Alertmanager)</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Modular AWS Infrastructure with Terraform &amp; EKS Helm charts</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-[#00F701] rounded">Kubernetes</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-sky-400 rounded">Prometheus</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-purple-400 rounded">Terraform</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-emerald-400 rounded">ArgoCD</span>
-          </div>
-          <a href="https://github.com/muhammad-adeel9290/devops-projectfirst" target="_blank" class="p-2 text-slate-400 hover:text-[#00F701] transition-colors" title="View Source on GitHub">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
 
-      <!-- Project 2: Server Health Monitor -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 sm:p-8 card-transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
-            <span class="text-[#00F701] font-semibold">LINUX AUTOMATION</span>
-            <span>Bash • Cron • Alerting</span>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Angular</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Node.js / Express</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">MongoDB</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Socket.io</span>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2">Automated Server Health Monitor &amp; Alerting Daemon</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Lightweight, robust Linux shell automation scripts that run periodically via cron daemon to check system metrics (CPU utilization, RAM saturation, disk threshold limits). Automatically sends alerts and writes formatted status logs when thresholds are breached.
+        </article>
+
+        <!-- Project 4: Campus Complaint Reporter -->
+        <article class="p-6 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors space-y-4">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg font-semibold text-white">
+                <span>Campus Complaint &amp; Issue Reporter</span>
+              </h3>
+              <p class="text-xs text-neutral-400 font-mono mt-0.5">University Course Project</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-neutral-300 leading-relaxed">
+            A departmental issue management platform built to solve real ticketing and student grievance resolution on campus. Features multi-role authentication (Student, Faculty, Department Admin) and ticket status tracking workflows.
           </p>
-          <div class="space-y-2 mb-6 text-xs text-slate-300 font-mono">
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Automated cron setup with failure notification triggers</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Custom threshold tuning &amp; structured log rotation</span>
-            </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">Web Architecture</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">REST APIs</span>
+            <span class="px-2.5 py-1 text-xs font-mono rounded bg-neutral-800/80 text-neutral-300">RBAC</span>
           </div>
-        </div>
-        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-[#00F701] rounded">Bash</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-slate-300 rounded">Linux</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-amber-400 rounded">Cron</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-sky-400 rounded">ShellCheck</span>
-          </div>
-          <a href="https://github.com/muhammad-adeel9290/server-health-monitor" target="_blank" class="p-2 text-slate-400 hover:text-[#00F701] transition-colors" title="View Source on GitHub">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-        </div>
+        </article>
+
       </div>
+    </section>
 
-      <!-- Project 3: SocialSphere -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 sm:p-8 card-transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
-            <span class="text-sky-400 font-semibold">FULL-STACK WEB APP</span>
-            <span>Angular • Node.js • MongoDB</span>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">SocialSphere - Real-Time Social Media Platform</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Feature-rich full-stack social networking web application featuring secure JWT authentication, real-time bidirectional messaging via WebSockets, post creation with media uploads, interactive likes/comments, and Progressive Web App (PWA) offline support.
-          </p>
-          <div class="space-y-2 mb-6 text-xs text-slate-300 font-mono">
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Real-time instant messaging using Socket.io</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Modular Angular architecture with reactive RxJS state</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-rose-400 rounded">Angular</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-emerald-400 rounded">Node.js</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-green-400 rounded">MongoDB</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-sky-400 rounded">Socket.io</span>
-          </div>
-          <a href="https://github.com/muhammad-adeel9290/SocialSphere" target="_blank" class="p-2 text-slate-400 hover:text-[#00F701] transition-colors" title="View Source on GitHub">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
+    <!-- Technical Skills / Toolkit -->
+    <section id="skills" class="space-y-6">
+      <h2 class="text-xs uppercase font-mono tracking-wider text-neutral-400 font-semibold">
+        Technical Toolkit
+      </h2>
 
-      <!-- Project 4: Campus Complaint Reporter -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 sm:p-8 card-transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
-            <span class="text-purple-400 font-semibold">ENTERPRISE SYSTEM</span>
-            <span>Issue Tracking • RBAC</span>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Campus Complaint &amp; Issue Reporter</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Institutional grievance tracking and resolving platform developed for university departments. Designed with strict Role-Based Access Control (Student, Faculty, Admin, HOD), automated status escalation, and audit logging.
-          </p>
-          <div class="space-y-2 mb-6 text-xs text-slate-300 font-mono">
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Role-Based Access Control with audit trails</span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#00F701]"></i>
-              <span>Departmental resolution workflows &amp; analytics</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-slate-300 rounded">Full-Stack</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-purple-400 rounded">RBAC</span>
-            <span class="px-2 py-0.5 text-xs font-mono bg-slate-900 text-[#00F701] rounded">REST API</span>
-          </div>
-          <a href="https://github.com/muhammad-adeel9290" target="_blank" class="p-2 text-slate-400 hover:text-[#00F701] transition-colors" title="View Source on GitHub">
-            <i data-lucide="github" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Education & Roadmap Section -->
-  <section id="education" class="py-20 bg-[#070b14] border-t border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         
-        <!-- Left: Education & Academic Journey -->
-        <div>
-          <h2 class="text-xs uppercase font-mono tracking-widest text-[#00F701] font-semibold mb-2">Academic Foundation</h2>
-          <h3 class="text-3xl font-extrabold text-white mb-6">Education</h3>
-
-          <div class="space-y-6">
-            <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 card-transition relative overflow-hidden">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-[#00F701]/5 rounded-bl-full pointer-events-none"></div>
-              <div class="flex items-start space-x-4">
-                <div class="w-12 h-12 rounded-xl bg-[#00F701]/10 border border-[#00F701]/30 flex-shrink-0 flex items-center justify-center text-[#00F701]">
-                  <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-white">Bachelor of Science in Software Engineering</h4>
-                  <p class="text-slate-300 text-sm mt-0.5 font-medium">COMSATS University Islamabad, Sahiwal Campus</p>
-                  <p class="text-slate-400 text-xs mt-1">Sahiwal, Pakistan 🇵🇰</p>
-                  <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
-                    <span class="px-2 py-1 rounded bg-slate-900 border border-slate-800">Operating Systems</span>
-                    <span class="px-2 py-1 rounded bg-slate-900 border border-slate-800">Computer Networks</span>
-                    <span class="px-2 py-1 rounded bg-slate-900 border border-slate-800">Data Structures</span>
-                    <span class="px-2 py-1 rounded bg-slate-900 border border-slate-800">Software Architecture</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="p-4 rounded-lg bg-neutral-900/40 border border-neutral-800/80 space-y-2">
+          <h4 class="font-medium text-white flex items-center space-x-2">
+            <i data-lucide="terminal" class="w-4 h-4 text-neutral-400"></i>
+            <span>Systems &amp; Scripting</span>
+          </h4>
+          <p class="text-xs text-neutral-400 leading-relaxed font-mono">
+            Linux (Ubuntu, Kali), Bash Scripting, Systemd, Cron automation, Git.
+          </p>
         </div>
 
-        <!-- Right: Current DevOps Learning Roadmap -->
-        <div>
-          <h2 class="text-xs uppercase font-mono tracking-widest text-sky-400 font-semibold mb-2">Growth &amp; Milestones</h2>
-          <h3 class="text-3xl font-extrabold text-white mb-6">DevOps Roadmap</h3>
+        <div class="p-4 rounded-lg bg-neutral-900/40 border border-neutral-800/80 space-y-2">
+          <h4 class="font-medium text-white flex items-center space-x-2">
+            <i data-lucide="container" class="w-4 h-4 text-neutral-400"></i>
+            <span>Containers &amp; Infrastructure</span>
+          </h4>
+          <p class="text-xs text-neutral-400 leading-relaxed font-mono">
+            Docker, Docker Compose, Kubernetes, Helm Charts, Terraform basics.
+          </p>
+        </div>
 
-          <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 space-y-4 font-mono text-xs sm:text-sm">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <span class="text-slate-300">Linux Administration &amp; Bash</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs">Active Daily</span>
-            </div>
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <span class="text-slate-300">Docker Containers &amp; Compose</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs">Working With It</span>
-            </div>
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <span class="text-slate-300">GitHub Actions CI/CD</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs">Building Pipelines</span>
-            </div>
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <span class="text-slate-300">Kubernetes (K8s) &amp; Helm</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs">In Progress</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">AWS &amp; Terraform Infrastructure</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/30 text-xs">Hands-on Practice</span>
-            </div>
-          </div>
+        <div class="p-4 rounded-lg bg-neutral-900/40 border border-neutral-800/80 space-y-2">
+          <h4 class="font-medium text-white flex items-center space-x-2">
+            <i data-lucide="activity" class="w-4 h-4 text-neutral-400"></i>
+            <span>Observability &amp; CI/CD</span>
+          </h4>
+          <p class="text-xs text-neutral-400 leading-relaxed font-mono">
+            Prometheus, Grafana, Alertmanager, GitHub Actions CI, Trivy.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-lg bg-neutral-900/40 border border-neutral-800/80 space-y-2">
+          <h4 class="font-medium text-white flex items-center space-x-2">
+            <i data-lucide="code" class="w-4 h-4 text-neutral-400"></i>
+            <span>Development</span>
+          </h4>
+          <p class="text-xs text-neutral-400 leading-relaxed font-mono">
+            TypeScript, JavaScript, Node.js, Express, Angular, MongoDB, REST APIs.
+          </p>
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Education Section -->
+    <section class="space-y-6">
+      <h2 class="text-xs uppercase font-mono tracking-wider text-neutral-400 font-semibold">
+        Education
+      </h2>
 
-  <!-- Contact & Connect Section -->
-  <section id="contact" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#00F701]/10 border border-[#00F701]/30 text-[#00F701] text-xs font-mono mb-4">
-      <i data-lucide="radio" class="w-3.5 h-3.5 text-[#00F701]"></i>
-      <span>Status: Online &amp; Ready to Collaborate</span>
-    </div>
-
-    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let’s Connect &amp; Build Something Great</h2>
-    <p class="text-slate-400 text-base mt-3 max-w-xl mx-auto">
-      Have an opportunity, questions about my projects, or want to discuss DevOps, Linux, or Cloud infrastructure? Feel free to reach out directly.
-    </p>
-
-    <!-- Connect Links -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-10">
-      
-      <!-- Email -->
-      <a href="mailto:muhammadadeel9290@gmail.com" class="p-6 rounded-2xl bg-[#0f172a] border border-slate-800 card-transition block text-center">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-[#00F701]/10 text-[#00F701] flex items-center justify-center mb-3">
-          <i data-lucide="mail" class="w-6 h-6"></i>
+      <div class="flex items-start justify-between p-5 rounded-lg bg-neutral-900/40 border border-neutral-800/80">
+        <div class="space-y-1">
+          <h4 class="font-medium text-white">Bachelor of Science in Software Engineering</h4>
+          <p class="text-sm text-neutral-400">COMSATS University Islamabad (Sahiwal Campus)</p>
+          <p class="text-xs text-neutral-500 font-mono mt-2">Core: Operating Systems, Computer Networks, Database Systems, Data Structures</p>
         </div>
-        <div class="text-xs font-mono text-slate-400">Direct Email</div>
-        <div class="text-sm font-semibold text-white mt-1 break-all">muhammadadeel9290@gmail.com</div>
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/muhammad-adeel9290" target="_blank" class="p-6 rounded-2xl bg-[#0f172a] border border-slate-800 card-transition block text-center">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3">
-          <i data-lucide="github" class="w-6 h-6"></i>
-        </div>
-        <div class="text-xs font-mono text-slate-400">GitHub Profile</div>
-        <div class="text-sm font-semibold text-white mt-1">@muhammad-adeel9290</div>
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com" target="_blank" class="p-6 rounded-2xl bg-[#0f172a] border border-slate-800 card-transition block text-center">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-3">
-          <i data-lucide="linkedin" class="w-6 h-6"></i>
-        </div>
-        <div class="text-xs font-mono text-slate-400">Professional Network</div>
-        <div class="text-sm font-semibold text-white mt-1">Connect on LinkedIn</div>
-      </a>
-
-    </div>
-
-    <div class="inline-flex items-center space-x-2 text-xs font-mono text-slate-400">
-      <i data-lucide="map-pin" class="w-4 h-4 text-[#00F701]"></i>
-      <span>Based in Sahiwal, Pakistan 🇵🇰 • Available Worldwide Remote</span>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-8 bg-[#050912] border-t border-slate-900 text-center text-xs text-slate-500 font-mono">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        © <span id="current-year">2026</span> Muhammad Adeel. Built with modern HTML5 &amp; Tailwind CSS.
+        <span class="text-xs font-mono text-neutral-400">Expected 2027</span>
       </div>
-      <div>
-        <a href="#" class="text-slate-400 hover:text-[#00F701] transition-colors">Back to top ↑</a>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="pt-8 border-t border-neutral-800/80 space-y-6">
+      <div class="space-y-2">
+        <h2 class="text-lg font-semibold text-white">Get in touch</h2>
+        <p class="text-sm text-neutral-400 leading-relaxed">
+          I'm always interested in discussing DevOps practices, Linux internals, or new junior/internship engineering opportunities. Feel free to reach out directly.
+        </p>
       </div>
-    </div>
-  </footer>
+
+      <div class="flex flex-wrap items-center gap-6 text-sm font-medium text-neutral-400 font-mono pt-2">
+        <a href="mailto:muhammadadeel9290@gmail.com" class="hover:text-white transition-colors flex items-center space-x-2">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>muhammadadeel9290@gmail.com</span>
+        </a>
+        <a href="https://github.com/muhammad-adeel9290" target="_blank" class="hover:text-white transition-colors flex items-center space-x-2">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>github.com/muhammad-adeel9290</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors flex items-center space-x-2">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="pt-12 text-xs text-neutral-600 font-mono flex items-center justify-between">
+        <span>© <span id="current-year">2026</span> Muhammad Adeel</span>
+        <span>Built with clean HTML &amp; Tailwind</span>
+      </div>
+    </section>
+
+  </div>
 
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Set current year dynamically
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Mobile navigation toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
   </script>
-
 </body>
 </html>
